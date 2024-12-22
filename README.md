@@ -6,7 +6,7 @@ To spawn the mobile robot in the gazebo world in the pose:
 - `y = 3.5 m`
 - `Y = −90 deg`
 You need to uncomment the following  code lines`#position = [-3.0, 3.5, 0.100]
-    #orientation = [0, 0, -90]` and `#"-Y", str(orientation[2])` and also need to comment `position = [0.0, 0.0, 0.100]`, in the launch file gazebo_fra2mo.launch.py and finally run the following command from the terminal:
+    #yaw=-1.57` and `#"-Y", str(yaw)` and also need to comment `position = [0.0, 0.0, 0.100]`, in the launch file gazebo_fra2mo.launch.py and finally run the following command from the terminal:
 ```bash
 ros2 launch rl_fra2mo_description gazebo_fra2mo.launch.py
 ```
@@ -22,9 +22,9 @@ After doing what was previously mentioned, in a new terminal you need to send:
 ```bash
 ros2 launch rl_fra2mo_description fra2mo_explore.launch.py
 ```
-Finally, in another terminal launch:
+Finally, to send the defined goals to the mobile platform in a given order, in another terminal launch:
 ```bash
-ros2 run rl_fra2mo_description follow_waypoints.launch.py
+ros2 run rl_fra2mo_description follow_waypoints.py
 ```
 ## Launch Rviz 
 To open rviz with our configuration, after launching `gazebo_fra2mo.launch.py` and `fra2mo_explore.launch.py`, in a new terminal run:
@@ -33,7 +33,7 @@ ros2 launch rl_fra2mo_description display_fra2mo.launch.py
 ```
 ## Vision-based Navigation 4a-4b
 To spawn the mobile robot in the gazebo world at the initial position, you need to comment the following lines of code `position = [-3.0, 3.5, 0.100]
-    orientation = [0, 0, -90]` and `"-Y", str(orientation[2])` and to uncomment `position = [0.0, 0.0, 0.100]`, in the launch file gazebo_fra2mo.launch.py and then run the following command from the first terminal:
+    yaw=-1.57` and `"-Y", str(yaw)` and to uncomment `position = [0.0, 0.0, 0.100]`, in the launch file gazebo_fra2mo.launch.py and then run the following command from the first terminal:
 ```bash
 ros2 launch rl_fra2mo_description gazebo_fra2mo.launch.py
 ```
